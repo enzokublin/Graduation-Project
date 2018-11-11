@@ -282,7 +282,7 @@ i.fas.fa-bowling-ball {
 /* ############################################################ */
 
 #top-box {
-    width: 410px;
+    width: 420px;
     height: 50px;
     border: 2px solid rgb(10, 10, 10);
     border-radius: 40px;
@@ -296,7 +296,7 @@ i.fas.fa-bowling-ball {
 }
 
 #top-box-right {
-    width: 450px;
+    width: 420px;
     height: 50px;
     border-radius: 40px;
     border: 2px solid rgb(10, 10, 10);
@@ -305,13 +305,13 @@ i.fas.fa-bowling-ball {
     transform: rotate(63deg);
     position: relative;
     z-index: 1;
-    left: 727px;
+    left: 740px;
     top: 289px;
     text-align: center;
 }
 
 #top-box-left {
-    width: 474px;
+    width: 420px;
     height: 50px;
     border-radius: 40px;
     border: 2px solid rgb(10, 10, 10);
@@ -320,13 +320,13 @@ i.fas.fa-bowling-ball {
     transform: rotate(116deg);
     position: relative;
     z-index: 1;
-    left: 68px;
-    top: 238px;
+    left: 99px;
+    top: 222px;
     text-align: center;
 }
 
 #bottom-box {
-    width: 405px;
+    width: 420px;
     height: 50px;
     border-radius: 40px;
     border: 2px solid rgb(10, 10, 10);
@@ -334,13 +334,13 @@ i.fas.fa-bowling-ball {
     background-color: rgb(229, 229, 237);
     position: relative;
     z-index: 1;
-    left: 429px;
+    left: 415px;
     bottom: 11px;
     text-align: center;
 }
 
 #bottom-box-right {
-    width: 421px;
+    width: 420px;
     height: 50px;
     border-radius: 40px;
     border: 2px solid rgb(10, 10, 10);
@@ -349,13 +349,13 @@ i.fas.fa-bowling-ball {
     transform: rotate(116deg);
     position: relative;
     z-index: 1;
-    left: 734px;
-    bottom: 261px;
+    left: 739px;
+    bottom: 267px;
     text-align: center;
 }
 
 #bottom-box-left {
-    width: 410px;
+    width: 420px;
     height: 50px;
     border-radius: 40px;
     border: 2px solid rgb(10, 10, 10);
@@ -364,7 +364,7 @@ i.fas.fa-bowling-ball {
     transform: rotate(63deg);
     position: relative;
     z-index: 1;
-    bottom: 312px;
-    left: 115px;
+    bottom: 334px;
+    left: 97px;
     text-align: center;
 }
