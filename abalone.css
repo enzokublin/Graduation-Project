@@ -1,0 +1,370 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("images/table.jpg");
+    display: flex;
+    flex-flow: column wrap;
+    filter: drop-shadow(8px 8px 10px gray);
+}
+
+/*#############################################################  */
+/*#############################################################  */
+/*#############################################################  */
+
+header {
+    background-color: rgb(11, 96, 152);
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+    margin: 0px 0px 0px 0px;
+    height: 138px;
+}
+
+#player-1-box {
+    width: 60px;
+    height: 50px;
+    border-radius: 8px;
+    border: 2px solid rgba(0, 0, 0, 1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+    margin: 20px 33px 20px 33px;
+    text-align: center;
+    padding: 16px 20px 27px 20px;
+    background-color: rgb(126, 175, 45);
+}
+
+#player-2-box {
+    width: 60px;
+    height: 50px;
+    border-radius: 8px;
+    border: 2px solid rgba(0, 0, 0, 1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+    margin: 20px 33px 20px 33px;
+    text-align: center;
+    padding: 16px 20px 27px 20px;
+    background-color: rgb(126, 175, 45);
+}
+
+h1 {
+    color: rgba(0, 0, 0, 1);
+    text-align: center;
+    width: 400px;
+    margin: 45px 0px 0px 0px;
+    padding: 5px 20px 2px 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+    text-shadow: 0 0 20px rgb(229, 229, 237);
+    border-radius: 40px;
+    height: 40px;
+    background-color: rgb(126, 175, 45);
+}
+
+i.fas.fa-bowling-ball {
+    font-size: 60px;
+    color: rgba(0, 0, 0, 1);
+    text-shadow: 0 0 20px rgb(228, 234, 240);
+}
+
+/* ############################################################# */
+/* ############################################################# */
+/* ############################################################# */
+
+#main-container {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    /* border: 2px solid rgb(11, 11, 11); */
+    /* padding: 20px 10px 20px 51px; */
+    /* margin:0px; */
+    font-weight: bold;
+    font-family: sans-serif;
+    font-size: 20px;
+    /* height: 95%; */
+}
+
+/* ############################################################ */
+/* ############################################################ */
+/* ############################################################ */
+
+.line-one {
+    text-align: center;
+    /* background-color: rgb(17, 145, 186); */
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 5px 0px;
+    margin: 20px 0px 0px 0px;
+}
+
+.line-two {
+    /* background-color: rgb(50, 191, 16); */
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 5px 0px;
+    text-align: center;
+}
+
+.line-three {
+    /* background-color: rgb(212, 23, 23); */
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 5px 0px;
+    text-align: center;
+}
+
+.line-four {
+    /* background-color: rgb(91, 99, 142); */
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 5px 0px;
+    text-align: center;
+}
+
+.line-five {
+    /* background-color: rgb(11, 71, 163); */
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 5px 0px;
+    text-align: center;
+}
+
+.line-six {
+    /* background-color: rgb(209, 201, 27); */
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 5px 0px;
+    text-align: center;
+}
+
+.line-seven {
+    /* background-color: rgb(106, 182, 49); */
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 5px 0px;
+    text-align: center;
+}
+
+.line-eight {
+    /* background-color: rgb(166, 24, 199); */
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 5px 0px;
+    text-align: center;
+}
+
+.line-nine {
+    /* background-color: rgb(4, 111, 157); */
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 5px 0px 0px 0px;
+    margin: 0px 0px 20px 0px;
+    text-align: center;
+}
+
+/* ############################################################ */
+/* ############################################################ */
+/* ############################################################ */
+
+.circle-line-one {
+    width: 50px;
+    height: 50px;
+    margin: 0px 5px;
+    padding: 10px;
+    border-radius: 50%;
+    border: 2px solid rgb(10, 10, 10);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+    background-color: rgb(229, 229, 237);
+}
+
+.circle-line-two {
+    width: 50px;
+    height: 50px;
+    margin: 0px 5px;
+    padding: 10px;
+    border-radius: 50%;
+    border: 2px solid rgb(10, 10, 10);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+    background-color: rgb(229, 229, 237);
+}
+
+.circle-line-three {
+    width: 50px;
+    height: 50px;
+    margin: 0px 5px;
+    padding: 10px;
+    border-radius: 50%;
+    border: 2px solid rgb(10, 10, 10);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+    background-color: rgb(229, 229, 237);
+}
+
+.circle-line-four {
+    width: 50px;
+    height: 50px;
+    margin: 0px 5px;
+    padding: 10px;
+    border-radius: 50%;
+    border: 2px solid rgb(10, 10, 10);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+    background-color: rgb(229, 229, 237);
+}
+
+.circle-line-five {
+    width: 50px;
+    height: 50px;
+    margin: 0px 5px;
+    padding: 10px;
+    padding: 10px;
+    border-radius: 50%;
+    border: 2px solid rgb(10, 10, 10);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+    background-color: rgb(229, 229, 237);
+}
+
+.circle-line-six {
+    width: 50px;
+    height: 50px;
+    margin: 0px 5px;
+    padding: 10px;
+    border-radius: 50%;
+    border: 2px solid rgb(10, 10, 10);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+    background-color: rgb(229, 229, 237);
+}
+
+.circle-line-seven {
+    width: 50px;
+    height: 50px;
+    margin: 0px 5px;
+    padding: 10px;
+    border-radius: 50%;
+    border: 2px solid rgb(10, 10, 10);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+    background-color: rgb(229, 229, 237);
+}
+
+.circle-line-eight {
+    width: 50px;
+    height: 50px;
+    margin: 0px 5px;
+    padding: 10px;
+    border-radius: 50%;
+    border: 2px solid rgb(10, 10, 10);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+    background-color: rgb(229, 229, 237);
+}
+
+.circle-line-nine {
+    width: 50px;
+    height: 50px;
+    margin: 0px 5px;
+    padding: 10px;
+    border-radius: 50%;
+    border: 2px solid rgb(10, 10, 10);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+    background-color: rgb(229, 229, 237);
+}
+
+/* ############################################################ */
+/* ############################################################ */
+/* ############################################################ */
+
+#top-box {
+    width: 410px;
+    height: 50px;
+    border: 2px solid rgb(10, 10, 10);
+    border-radius: 40px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+    background-color: rgb(229, 229, 237);
+    position: relative;
+    z-index: 2;
+    left: 424px;
+    top: 124px;
+    text-align: center;
+}
+
+#top-box-right {
+    width: 450px;
+    height: 50px;
+    border-radius: 40px;
+    border: 2px solid rgb(10, 10, 10);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+    background-color: rgb(229, 229, 237);
+    transform: rotate(63deg);
+    position: relative;
+    z-index: 1;
+    left: 727px;
+    top: 289px;
+    text-align: center;
+}
+
+#top-box-left {
+    width: 474px;
+    height: 50px;
+    border-radius: 40px;
+    border: 2px solid rgb(10, 10, 10);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+    background-color: rgb(229, 229, 237);
+    transform: rotate(116deg);
+    position: relative;
+    z-index: 1;
+    left: 68px;
+    top: 238px;
+    text-align: center;
+}
+
+#bottom-box {
+    width: 405px;
+    height: 50px;
+    border-radius: 40px;
+    border: 2px solid rgb(10, 10, 10);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+    background-color: rgb(229, 229, 237);
+    position: relative;
+    z-index: 1;
+    left: 429px;
+    bottom: 11px;
+    text-align: center;
+}
+
+#bottom-box-right {
+    width: 421px;
+    height: 50px;
+    border-radius: 40px;
+    border: 2px solid rgb(10, 10, 10);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+    background-color: rgb(229, 229, 237);
+    transform: rotate(116deg);
+    position: relative;
+    z-index: 1;
+    left: 734px;
+    bottom: 261px;
+    text-align: center;
+}
+
+#bottom-box-left {
+    width: 410px;
+    height: 50px;
+    border-radius: 40px;
+    border: 2px solid rgb(10, 10, 10);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+    background-color: rgb(229, 229, 237);
+    transform: rotate(63deg);
+    position: relative;
+    z-index: 1;
+    bottom: 312px;
+    left: 115px;
+    text-align: center;
+}
