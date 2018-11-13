@@ -1,0 +1,72 @@
+var rowsLogic = [
+    {
+        row: [ 1, 2, 3, 4, 5 ],
+        incr: 6
+    },
+
+    {
+        row: [ 6, 7, 8, 9, 10, 11 ],
+        incr: 7
+    },
+
+    {
+        row: [ 12, 13, 14, 15, 16, 17, 18 ],
+        incr: 8
+    },
+
+    {
+        row: [ 19, 20, 21, 22, 23, 24, 25, 26 ],
+        incr: 9
+    },
+
+    {
+        row: [ 27, 28, 29, 30, 31, 32, 33, 34, 35 ],
+        incr: 9
+    }
+
+]
+
+// gives you actual number that the user clicked on 
+var userSelection = $(e.currentTarget).text()
+var incrementer;
+
+rowsLogic.forEach(line => {
+    if (line.row.indexOf(userSelection) !== -1) {
+        incrementer = line.incr
+    }
+})
+
+// if you make it down here -- you have the correct incrementer!!! 
+// down here you have access to incrementer, and the number that the user clicked on 
+// incrementer, userSelection
+
+
+
+lets say user clicks on 17 
+// so userSelection = 17
+// and incrementer = 8
+
+1. finish the rowsLogic array 
+
+2. add id to every div with class marbles 
+---- each id should be equal to it's number
+---- meaning div with number 17 should have id = "17"
+
+
+3. check if spaces immediately to LEFT or RIGHT of 17 contain class player1.
+-- function adjacentVictoryCheck()
+---- 17 - 1, 17 + 1
+---- IF ( 17 - 1 ) contains class player1, then you can put your marble on 17
+---- IF ( 17 + 1 ) contains class player1, then you can put your marble on 17
+
+4. check if spaces UNDERNEATH 17 contain class player1 (17's incrementer is 8)
+-- function belowVictoryCheck()
+---- (17 + 8, 17 + 7)
+---- IF ( 17 + 8 ) contains class player1, then you can put your marble on 17
+---- IF ( 17 + 7 ) contains class player1, then you can put your marble on 17
+
+5. check if spaces ABOVE 17 contain class player 1 (17's incrementer is 8)
+-- function aboveVictoryCheck()
+---- (17 - 7, 17 - 6)
+---- IF ( 17 - 7 ) contains class player1, then you can put your marble on 17
+---- IF ( 17 - 6 ) contains class player1, then you can put your marble on 17
