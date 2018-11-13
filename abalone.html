@@ -1,112 +1,164 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <title>Abalone</title>
-        <link rel="stylesheet" href="abalone.css">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-    </head>
-    <body>
-<header>
-    <div id="player-1-box">
-        <i class="fas fa-bowling-ball"></i>
-    </div>
-    <h1>WELCOME TO ABALONE</h1>
-    <div id="player-2-box">
-        <i class="fas fa-bowling-ball"></i>
-    </div>
-</header>
-<div id="top-box">A</div>
-<div id="top-box-right">B</div>
-<div id="top-box-left">C</div>
-<div id="main-container">
-    <div class="line-one">
-        <div class="circle-line-one">1</div>
-        <div class="circle-line-one">2</div>
-        <div class="circle-line-one">3</div>
-        <div class="circle-line-one">4</div>
-        <div class="circle-line-one">5</div>
-    </div>
-    <div class="line-two">
-        <div class="circle-line-two">6</div>
-        <div class="circle-line-two">7</div>
-        <div class="circle-line-two">8</div>
-        <div class="circle-line-two">9</div>
-        <div class="circle-line-two">10</div>
-        <div class="circle-line-two">11</div>
-    </div>
-    <div class="line-three">
-        <div class="circle-line-three">12</div>
-        <div class="circle-line-three">13</div>
-        <div class="circle-line-three">14</div>
-        <div class="circle-line-three">15</div>
-        <div class="circle-line-three">16</div>
-        <div class="circle-line-three">17</div>
-        <div class="circle-line-three">18</div>
-    </div>
-    <div class="line-four">
-        <div class="circle-line-four">19</div>
-        <div class="circle-line-four">20</div>
-        <div class="circle-line-four">21</div>
-        <div class="circle-line-four">22</div>
-        <div class="circle-line-four">23</div>
-        <div class="circle-line-four">24</div>
-        <div class="circle-line-four">25</div>
-        <div class="circle-line-four">26</div>
-    </div>
-    <div class="line-five">
-        <div class="circle-line-five">27</div>
-        <div class="circle-line-five">28</div>
-        <div class="circle-line-five">29</div>
-        <div class="circle-line-five">30</div>
-        <div class="circle-line-five">31</div>
-        <div class="circle-line-five">32</div>
-        <div class="circle-line-five">33</div>
-        <div class="circle-line-five">34</div>
-        <div class="circle-line-five">35</div>
-    </div>
-    <div class="line-six">
-        <div class="circle-line-six">36</div>
-        <div class="circle-line-six">37</div>
-        <div class="circle-line-six">38</div>
-        <div class="circle-line-six">39</div>
-        <div class="circle-line-six">40</div>
-        <div class="circle-line-six">41</div>
-        <div class="circle-line-six">42</div>
-        <div class="circle-line-six">43</div>
-    </div>
-    <div class="line-seven">
-        <div class="circle-line-seven">44</div>
-        <div class="circle-line-seven">45</div>
-        <div class="circle-line-seven">46</div>
-        <div class="circle-line-seven">47</div>
-        <div class="circle-line-seven">48</div>
-        <div class="circle-line-seven">49</div>
-        <div class="circle-line-seven">50</div>
-    </div>
-    <div class="line-eight">
-        <div class="circle-line-eight">51</div>
-        <div class="circle-line-eight">52</div>
-        <div class="circle-line-eight">53</div>
-        <div class="circle-line-eight">54</div>
-        <div class="circle-line-eight">55</div>
-        <div class="circle-line-eight">56</div>
-    </div>
-    <div class="line-nine">
-        <div class="circle-line-nine">57</div>
-        <div class="circle-line-nine">58</div>
-        <div class="circle-line-nine">59</div>
-        <div class="circle-line-nine">60</div>
-        <div class="circle-line-nine">61</div>
+
+<head>
+    <meta charset="utf-8">
+    <title>Abalone</title>
+    <link rel="stylesheet" href="abalone.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+</head>
+
+<body>
+<div id="primary-container">
+    <div id="main-box">
+        <h2>Welcome to Abalone</h2>
+        <div id="player-box-I">
+            <h3>Player I:</h3>
+            <div id="counter-player-I">0</div>
+            <div id="player-1-box">
+                <i class="fas fa-bowling-ball"></i>
+            </div>
+        </div>
+        <div id="player-box-II">
+            <h3>Player II:</h3>
+            <div id="counter-player-II">0</div>
+            <div id="player-2-box">
+                <i class="fas fa-bowling-ball"></i>
+            </div>
+        </div>
     </div>
 
+    <div id="rules-container">
+        <h3>Rules</h3>
+        <p id="top-rule-p">The basic version of the classical board game “Abalone“ is played by two players. Each player has 14 marbles of which maximum 3 can be moved at the same time. Therefore, one move can include 1, 2 or 3 of the own marbles. Within one move
+            the marbles can be pushed in all possible directions. </p>
+        <p id="middle-rule-p">The ultimate objective of the game is to push 6 of the opponents marbles out of the game. In order to push the opponents marbles the current player must have at least one marble more than his counterpart in the line in which direction he
+            wants to move them. </p>
+        <p id="bottom-rule-p">
+            Meaning 3 marbles can push 2 or 1 while 2 can only move 1 opponent one. Remember, because maximum 3 of the player’s own marbles can be moved at the same time, it’s not possible to push 3 opponent one’s by 4 own
+            marbles.
+        </p>
+    </div>
+
+    <div id="main-container">
+        <div class="line-zero">
+            <div class="out"><i class="far fa-grimace"></i></div>
+            <div class="out"><i class="far fa-grimace"></i></div>
+            <div class="out"><i class="far fa-grimace"></i></div>
+            <div class="out"><i class="far fa-grimace"></i></div>
+            <div class="out"><i class="far fa-grimace"></i></div>
+            <div class="out"><i class="far fa-grimace"></i></div>
+        </div>
+        <div class="lineOne">
+            <div class="outline-left"><i class="far fa-grimace"></i></div>
+            <div class="circle-line-one marbles player-1" id="1">1</div>
+            <div class="circle-line-one marbles player-1" id="2">2</div>
+            <div class="circle-line-one marbles player-1" id="3">3</div>
+            <div class="circle-line-one marbles player-1" id="4">4</div>
+            <div class="circle-line-one marbles player-1" id="5">5</div>
+            <div class="outline-right"><i class="far fa-grimace"></i></div>
+        </div>
+        <div class="lineTwo">
+            <div class="outline-left"><i class="far fa-grimace"></i></div>
+            <div class="circle-line-two marbles player-1" id="6">6</div>
+            <div class="circle-line-two marbles player-1" id="7">7</div>
+            <div class="circle-line-two marbles player-1"id="8">8</div>
+            <div class="circle-line-two marbles player-1" id="9">9</div>
+            <div class="circle-line-two marbles player-1" id="10">10</div>
+            <div class="circle-line-two marbles player-1" id="11">11</div>
+            <div class="outline-right"><i class="far fa-grimace"></i></div>
+        </div>
+        <div class="lineThree">
+            <div class="outline-left"><i class="far fa-grimace"></i></div>
+            <div class="circle-line-three marbles" id="12">12</div>
+            <div class="circle-line-three marbles" id="12">13</div>
+            <div class="circle-line-three marbles player-1" id="14">14</div>
+            <div class="circle-line-three marbles player-1" id="15">15</div>
+            <div class="circle-line-three marbles player-1" id="16">16</div>
+            <div class="circle-line-three marbles" id="17">17</div>
+            <div class="circle-line-three marbles" id="18">18</div>
+            <div class="outline-right"><i class="far fa-grimace"></i></div>
+        </div>
+        <div class="lineFour">
+            <div class="outline-left"><i class="far fa-grimace"></i></div>
+            <div class="circle-line-four marbles" id="19">19</div>
+            <div class="circle-line-four marbles" id="20">20</div>
+            <div class="circle-line-four marbles" id="21">21</div>
+            <div class="circle-line-four marbles" id="22">22</div>
+            <div class="circle-line-four marbles" id="23">23</div>
+            <div class="circle-line-four marbles" id="24">24</div>
+            <div class="circle-line-four marbles" id="25">25</div>
+            <div class="circle-line-four marbles" id="26">26</div>
+            <div class="outline-right"><i class="far fa-grimace"></i></div>
+        </div>
+        <div class="lineFive">
+            <div class="outline-left"><i class="far fa-grimace"></i></div>
+            <div class="circle-line-five marbles" id="27">27</div>
+            <div class="circle-line-five marbles" id="28">28</div>
+            <div class="circle-line-five marbles" id="29">29</div>
+            <div class="circle-line-five marbles" id="30">30</div>
+            <div class="circle-line-five marbles" id="31">31</div>
+            <div class="circle-line-five marbles" id="32">32</div>
+            <div class="circle-line-five marbles" id="33">33</div>
+            <div class="circle-line-five marbles" id="34">34</div>
+            <div class="circle-line-five marbles" id="35">35</div>
+            <div class="outline-right"><i class="far fa-grimace"></i></div>
+        </div>
+        <div class="lineSix">
+            <div class="outline-left"><i class="far fa-grimace"></i></div>
+            <div class="circle-line-six marbles" id="36">36</div>
+            <div class="circle-line-six marbles" id="37">37</div>
+            <div class="circle-line-six marbles" id="38">38</div>
+            <div class="circle-line-six marbles" id="39">39</div>
+            <div class="circle-line-six marbles" id="40">40</div>
+            <div class="circle-line-six marbles" id="41">41</div>
+            <div class="circle-line-six marbles" id="42">42</div>
+            <div class="circle-line-six marbles" id="43">43</div>
+            <div class="outline-right"><i class="far fa-grimace"></i></div>
+        </div>
+        <div class="lineSeven">
+            <div class="outline-left"><i class="far fa-grimace"></i></div>
+            <div class="circle-line-seven marbles" id="44">44</div>
+            <div class="circle-line-seven marbles" id="45">45</div>
+            <div class="circle-line-seven marbles player-2" id="46">46</div>
+            <div class="circle-line-seven marbles player-2" id="47">47</div>
+            <div class="circle-line-seven marbles player-2" id="48">48</div>
+            <div class="circle-line-seven marbles" id="49">49</div>
+            <div class="circle-line-seven marbles" id="50">50</div>
+            <div class="outline-right"><i class="far fa-grimace"></i></div>
+        </div>
+        <div class="lineEight">
+            <div class="outline-left"><i class="far fa-grimace"></i></div>
+            <div class="circle-line-eight marbles player-2" id="51">51</div>
+            <div class="circle-line-eight marbles player-2" id="52">52</div>
+            <div class="circle-line-eight marbles player-2" id="53">53</div>
+            <div class="circle-line-eight marbles player-2" id="54">54</div>
+            <div class="circle-line-eight marbles player-2" id="55">55</div>
+            <div class="circle-line-eight marbles player-2" id="56">56</div>
+            <div class="outline-right"><i class="far fa-grimace"></i></div>
+        </div>
+        <div class="lineNine">
+            <div class="outline-left"><i class="far fa-grimace"></i></div>
+            <div class="circle-line-nine marbles player-2" id="57">57</div>
+            <div class="circle-line-nine marbles player-2" id="58">58</div>
+            <div class="circle-line-nine marbles player-2" id="59">59</div>
+            <div class="circle-line-nine marbles player-2" id="60">60</div>
+            <div class="circle-line-nine marbles player-2" id="61">61</div>
+            <div class="outline-right"><i class="far fa-grimace"></i></div>
+        </div>
+        <div class="line-ten">
+            <div class="out-bottom"><i class="far fa-grimace"></i></div>
+            <div class="out-bottom"><i class="far fa-grimace"></i></div>
+            <div class="out-bottom"><i class="far fa-grimace"></i></div>
+            <div class="out-bottom"><i class="far fa-grimace"></i></div>
+            <div class="out-bottom"><i class="far fa-grimace"></i></div>
+            <div class="out-bottom"><i class="far fa-grimace"></i></div>
+        </div>
+    </div>
 </div>
-<div id="bottom-box">D</div>
-<div id="bottom-box-right">F</div>
-<div id="bottom-box-left">E</div>
 
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="script.js" charset="utf-8"></script>
+</body>
 
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-        <script src="script.js" charset="utf-8"></script>
-    </body>
 </html>

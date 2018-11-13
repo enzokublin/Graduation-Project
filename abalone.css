@@ -9,64 +9,225 @@ body {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
         url("images/table.jpg");
     display: flex;
-    flex-flow: column wrap;
-    filter: drop-shadow(8px 8px 10px gray);
+    justify-content: center;
+    align-items: center;
+    /* justify-content: center; */
+    filter: drop-shadow(8px 8px 10px rgb(70, 73, 75));
+    /* background-repeat: no-repeat;
+    background-size: auto; */
 }
 
-/*#############################################################  */
-/*#############################################################  */
-/*#############################################################  */
-
-header {
-    background-color: rgb(11, 96, 152);
+#primary-container {
     display: flex;
-    justify-content: space-between;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+    flex-flow: row wrap;
+}
+
+.marbles {
+}
+
+/*#############################################################  */
+/*#############################################################  */
+/*#############################################################  */
+
+#main-box {
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    width: 272px;
+    height: 485px;
     margin: 0px 0px 0px 0px;
-    height: 138px;
-}
-
-#player-1-box {
-    width: 60px;
-    height: 50px;
+    /* background-color: rgb(11, 96, 152); */
+    /* color: rgb(228, 234, 240); */
+    /* border: 2px solid rgb(126, 175, 45); */
     border-radius: 8px;
-    border: 2px solid rgba(0, 0, 0, 1);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 1);
-    margin: 20px 33px 20px 33px;
-    text-align: center;
-    padding: 16px 20px 27px 20px;
-    background-color: rgb(126, 175, 45);
 }
 
-#player-2-box {
-    width: 60px;
-    height: 50px;
-    border-radius: 8px;
-    border: 2px solid rgba(0, 0, 0, 1);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 1);
-    margin: 20px 33px 20px 33px;
+h2 {
     text-align: center;
-    padding: 16px 20px 27px 20px;
-    background-color: rgb(126, 175, 45);
-}
-
-h1 {
-    color: rgba(0, 0, 0, 1);
-    text-align: center;
-    width: 400px;
-    margin: 45px 0px 0px 0px;
-    padding: 5px 20px 2px 20px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 1);
-    text-shadow: 0 0 20px rgb(229, 229, 237);
-    border-radius: 40px;
+    color: rgb(228, 234, 240);
+    /* background-color: rgb(126, 175, 45); */
+    width: 219px;
     height: 40px;
-    background-color: rgb(126, 175, 45);
+    padding: 14px 10px 2px 10px;
+    margin: 25px 0px 0px 0px;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+    /* border: 2px solid rgba(0, 0, 0, 1); */
+    border-radius: 8px;
 }
 
 i.fas.fa-bowling-ball {
-    font-size: 60px;
-    color: rgba(0, 0, 0, 1);
-    text-shadow: 0 0 20px rgb(228, 234, 240);
+    font-size: 45px;
+    color: rgb(228, 234, 240);
+    text-shadow: -1 -1 20px rgba(0, 0, 0, 1);
+}
+
+/* ########################################################################## */
+/* ########################################################################## */
+/* ########################################################################## */
+
+#rules-container {
+    display: flex;
+    /* justify-content: center; */
+    flex-flow: column wrap;
+    width: 320px;
+    /* height: 485px; */
+    margin: 0px 5px 0px 5px;
+    /* border: 2px solid rgb(126, 175, 45); */
+    border-radius: 8px;
+}
+
+#rules-container h3 {
+    width: 310px;
+    height: 20px;
+    text-align: center;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 1);
+    color: rgb(228, 234, 240);
+    padding: 7px 6px 8px 6px;
+    margin: 25px 0px 20px 0px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+    /* border: 2px solid rgba(0, 0, 0, 1); */
+    border-radius: 8px;
+}
+
+#top-rule-p {
+    width: 300px;
+    height: 130px;
+    text-align: justify;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 1);
+    color: rgb(228, 234, 240);
+    padding: 10px 10px 10px 10px;
+    margin: 0px 0px 20px 0px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+    /* border: 2px solid rgba(0, 0, 0, 1); */
+    border-radius: 8px;
+}
+
+#middle-rule-p {
+    width: 300px;
+    height: 110px;
+    text-align: justify;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 1);
+    color: rgb(228, 234, 240);
+    padding: 10px 10px 10px 10px;
+    margin: 0px 0px 20px 0px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+    /* border: 2px solid rgba(0, 0, 0, 1); */
+    border-radius: 8px;
+}
+
+#bottom-rule-p {
+    width: 300px;
+    height: 110px;
+    text-align: justify;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 1);
+    color: rgb(228, 234, 240);
+    padding: 10px 10px 10px 10px;
+    margin: 0px 0px 0px 0px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+    /* border: 2px solid rgba(0, 0, 0, 1); */
+    border-radius: 8px;
+}
+
+/* ########################################################################## */
+/* ########################################################################## */
+/* ########################################################################## */
+
+#player-box-I {
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    color: rgb(228, 234, 240);
+    margin: 25px 0px;
+}
+
+#player-box-I h3 {
+    width: 89px;
+    height: 20px;
+    text-align: center;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 1);
+    color: rgb(228, 234, 240);
+    background-color: rgb(108, 16, 16);
+    padding: 7px 6px 8px 6px;
+    margin: 0px 0px 0px 0px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+    /* border: 2px solid rgba(0, 0, 0, 1); */
+    border-radius: 8px;
+}
+
+#counter-player-I {
+    width: 103px;
+    height: 26px;
+    text-align: center;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 1);
+    color: rgb(228, 234, 240);
+    background-color: rgb(108, 16, 16);
+    padding: 9px 0px 0px 0px;
+    margin: 0px 0px 0px 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+    /* border: 2px solid rgba(0, 0, 0, 1); */
+    border-radius: 8px;
+}
+
+#player-1-box {
+    width: 30px;
+    height: 30px;
+    background-color: rgb(108, 16, 16);
+    padding: 30px 44px 42px 29px;
+    margin: 15px 114px 0px 0px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+    /* border: 2px solid rgba(0, 0, 0, 1); */
+    border-radius: 8px;
+}
+
+/* ########################################################################## */
+/* ########################################################################## */
+/* ########################################################################## */
+
+#player-box-II {
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    color: rgb(228, 234, 240);
+}
+
+#player-box-II h3 {
+    width: 89px;
+    height: 20px;
+    text-align: center;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 1);
+    color: rgb(228, 234, 240);
+    background-color: rgb(6, 35, 92);
+    padding: 7px 6px 8px 6px;
+    margin: 0px 0px 0px 0px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+    /* border: 2px solid rgba(0, 0, 0, 1); */
+    border-radius: 8px;
+}
+
+#counter-player-II {
+    width: 103px;
+    height: 26px;
+    text-align: center;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 1);
+    color: rgb(228, 234, 240);
+    background-color: rgb(6, 35, 92);
+    padding: 9px 0px 0px 0px;
+    margin: 0px 0px 0px 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+    /* border: 2px solid rgba(0, 0, 0, 1); */
+    border-radius: 8px;
+}
+
+#player-2-box {
+    width: 30px;
+    height: 30px;
+    background-color: rgb(6, 35, 92);
+    padding: 30px 44px 42px 29px;
+    margin: 15px 114px 0px 0px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+    /* border: 2px solid rgba(0, 0, 0, 1); */
+    border-radius: 8px;
 }
 
 /* ############################################################# */
@@ -76,100 +237,95 @@ i.fas.fa-bowling-ball {
 #main-container {
     display: flex;
     flex-flow: column wrap;
-    justify-content: center;
-    /* border: 2px solid rgb(11, 11, 11); */
-    /* padding: 20px 10px 20px 51px; */
-    /* margin:0px; */
     font-weight: bold;
     font-family: sans-serif;
-    font-size: 20px;
-    /* height: 95%; */
+    margin: 8px 0px;
 }
 
 /* ############################################################ */
 /* ############################################################ */
 /* ############################################################ */
 
-.line-one {
+.lineOne {
     text-align: center;
     /* background-color: rgb(17, 145, 186); */
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    padding: 5px 0px;
-    margin: 20px 0px 0px 0px;
+    padding: 0px 0px;
+    margin: 0px 0px 0px 0px;
 }
 
-.line-two {
-    /* background-color: rgb(50, 191, 16); */
+.lineTwo {
+    /* background-color: rgb(126, 175, 45); */
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    padding: 5px 0px;
+    padding: 0px 0px;
     text-align: center;
 }
 
-.line-three {
+.lineThree {
     /* background-color: rgb(212, 23, 23); */
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    padding: 5px 0px;
+    padding: 0px 0px;
     text-align: center;
 }
 
-.line-four {
+.lineFour {
     /* background-color: rgb(91, 99, 142); */
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    padding: 5px 0px;
+    padding: 0px 0px;
     text-align: center;
 }
 
-.line-five {
+.lineFive {
     /* background-color: rgb(11, 71, 163); */
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    padding: 5px 0px;
+    padding: 0px 0px;
     text-align: center;
 }
 
-.line-six {
+.lineSix {
     /* background-color: rgb(209, 201, 27); */
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    padding: 5px 0px;
+    padding: 0px 0px;
     text-align: center;
 }
 
-.line-seven {
-    /* background-color: rgb(106, 182, 49); */
+.lineSeven {
+    /* background-color: rgb(126, 175, 45); */
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    padding: 5px 0px;
+    padding: 0px 0px;
     text-align: center;
 }
 
-.line-eight {
+.lineEight {
     /* background-color: rgb(166, 24, 199); */
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    padding: 5px 0px;
+    padding: 0px 0px;
     text-align: center;
 }
 
-.line-nine {
+.lineNine {
     /* background-color: rgb(4, 111, 157); */
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    padding: 5px 0px 0px 0px;
-    margin: 0px 0px 20px 0px;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
     text-align: center;
 }
 
@@ -178,193 +334,182 @@ i.fas.fa-bowling-ball {
 /* ############################################################ */
 
 .circle-line-one {
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
+    color: rgb(228, 234, 240);
     margin: 0px 5px;
     padding: 10px;
     border-radius: 50%;
-    border: 2px solid rgb(10, 10, 10);
+    /* border: 2px solid rgba(0, 0, 0, 1); */
     box-shadow: 0 0 20px rgba(0, 0, 0, 1);
-    background-color: rgb(229, 229, 237);
+    /* background-color: rgb(228, 234, 240); */
 }
 
 .circle-line-two {
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
+    color: rgb(228, 234, 240);
     margin: 0px 5px;
     padding: 10px;
     border-radius: 50%;
-    border: 2px solid rgb(10, 10, 10);
+    /* border: 2px solid rgba(0, 0, 0, 1); */
     box-shadow: 0 0 20px rgba(0, 0, 0, 1);
-    background-color: rgb(229, 229, 237);
+    /* background-color: rgb(228, 234, 240); */
 }
 
 .circle-line-three {
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
+    color: rgb(228, 234, 240);
     margin: 0px 5px;
     padding: 10px;
     border-radius: 50%;
-    border: 2px solid rgb(10, 10, 10);
+    /* border: 2px solid rgba(0, 0, 0, 1); */
     box-shadow: 0 0 20px rgba(0, 0, 0, 1);
-    background-color: rgb(229, 229, 237);
+    /* background-color: rgb(228, 234, 240); */
 }
 
 .circle-line-four {
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
+    color: rgb(228, 234, 240);
     margin: 0px 5px;
     padding: 10px;
     border-radius: 50%;
-    border: 2px solid rgb(10, 10, 10);
+    /* border: 2px solid rgba(0, 0, 0, 1); */
     box-shadow: 0 0 20px rgba(0, 0, 0, 1);
-    background-color: rgb(229, 229, 237);
+    /* background-color: rgb(228, 234, 240); */
 }
 
 .circle-line-five {
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
+    color: rgb(228, 234, 240);
     margin: 0px 5px;
     padding: 10px;
     padding: 10px;
     border-radius: 50%;
-    border: 2px solid rgb(10, 10, 10);
+    /* border: 2px solid rgba(0, 0, 0, 1); */
     box-shadow: 0 0 20px rgba(0, 0, 0, 1);
-    background-color: rgb(229, 229, 237);
+    /* background-color: rgb(228, 234, 240); */
 }
 
 .circle-line-six {
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
+    color: rgb(228, 234, 240);
     margin: 0px 5px;
     padding: 10px;
     border-radius: 50%;
-    border: 2px solid rgb(10, 10, 10);
+    /* border: 2px solid rgba(0, 0, 0, 1); */
     box-shadow: 0 0 20px rgba(0, 0, 0, 1);
-    background-color: rgb(229, 229, 237);
+    /* background-color: rgb(228, 234, 240); */
 }
 
 .circle-line-seven {
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
+    color: rgb(228, 234, 240);
     margin: 0px 5px;
     padding: 10px;
     border-radius: 50%;
-    border: 2px solid rgb(10, 10, 10);
+    /* border: 2px solid rgba(0, 0, 0, 1); */
     box-shadow: 0 0 20px rgba(0, 0, 0, 1);
-    background-color: rgb(229, 229, 237);
+    /* background-color: rgb(228, 234, 240); */
 }
 
 .circle-line-eight {
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
+    color: rgb(228, 234, 240);
     margin: 0px 5px;
     padding: 10px;
     border-radius: 50%;
-    border: 2px solid rgb(10, 10, 10);
+    /* border: 2px solid rgba(0, 0, 0, 1); */
     box-shadow: 0 0 20px rgba(0, 0, 0, 1);
-    background-color: rgb(229, 229, 237);
+    /* background-color: rgb(228, 234, 240); */
 }
 
 .circle-line-nine {
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
+    color: rgb(228, 234, 240);
     margin: 0px 5px;
     padding: 10px;
     border-radius: 50%;
-    border: 2px solid rgb(10, 10, 10);
+    /* border: 2px solid rgba(0, 0, 0, 1); */
     box-shadow: 0 0 20px rgba(0, 0, 0, 1);
-    background-color: rgb(229, 229, 237);
+    /* background-color: rgb(228, 234, 240); */
 }
 
 /* ############################################################ */
 /* ############################################################ */
 /* ############################################################ */
 
-#top-box {
-    width: 420px;
-    height: 50px;
-    border: 2px solid rgb(10, 10, 10);
-    border-radius: 40px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 1);
-    background-color: rgb(229, 229, 237);
-    position: relative;
-    z-index: 2;
-    left: 424px;
-    top: 124px;
-    text-align: center;
+.player-1 {
+    background-color: rgb(108, 16, 16);
+    color: rgb(228, 234, 240);
 }
 
-#top-box-right {
-    width: 420px;
-    height: 50px;
-    border-radius: 40px;
-    border: 2px solid rgb(10, 10, 10);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 1);
-    background-color: rgb(229, 229, 237);
-    transform: rotate(63deg);
-    position: relative;
-    z-index: 1;
-    left: 740px;
-    top: 289px;
-    text-align: center;
+.player-2 {
+    background-color: rgb(6, 35, 92);
+    color: rgb(228, 234, 240);
 }
 
-#top-box-left {
-    width: 420px;
-    height: 50px;
-    border-radius: 40px;
-    border: 2px solid rgb(10, 10, 10);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 1);
-    background-color: rgb(229, 229, 237);
-    transform: rotate(116deg);
-    position: relative;
-    z-index: 1;
-    left: 99px;
-    top: 222px;
-    text-align: center;
+/* ############################################################ */
+/* ############################################################ */
+/* ############################################################ */
+
+.line-ten {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
 }
 
-#bottom-box {
-    width: 420px;
-    height: 50px;
-    border-radius: 40px;
-    border: 2px solid rgb(10, 10, 10);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 1);
-    background-color: rgb(229, 229, 237);
-    position: relative;
-    z-index: 1;
-    left: 415px;
-    bottom: 11px;
-    text-align: center;
+.line-zero {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
 }
 
-#bottom-box-right {
-    width: 420px;
-    height: 50px;
-    border-radius: 40px;
-    border: 2px solid rgb(10, 10, 10);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 1);
-    background-color: rgb(229, 229, 237);
-    transform: rotate(116deg);
-    position: relative;
-    z-index: 1;
-    left: 739px;
-    bottom: 267px;
-    text-align: center;
+.out {
+    width: 30px;
+    height: 30px;
+    margin: 0px 0px 10px 10px;
+    padding: 10px 10px;
+    border-radius: 50%;
 }
 
-#bottom-box-left {
-    width: 420px;
-    height: 50px;
-    border-radius: 40px;
-    border: 2px solid rgb(10, 10, 10);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 1);
-    background-color: rgb(229, 229, 237);
-    transform: rotate(63deg);
-    position: relative;
-    z-index: 1;
-    bottom: 334px;
-    left: 97px;
-    text-align: center;
+.out-bottom {
+    width: 30px;
+    height: 30px;
+    margin: 0px 0px 0px 10px;
+    padding: 0px 10px 0px 10px;
+    border-radius: 50%;
+}
+
+.outline-right {
+    width: 30px;
+    height: 30px;
+    margin: 0px 0px;
+    padding: 0px 10px 0px 4px;
+    border-radius: 50%;
+}
+
+.outline-left {
+    width: 30px;
+    height: 30px;
+    margin: 0px 13px;
+    padding: 0px 9px 0px 5px;
+    border-radius: 50%;
+}
+
+i.far.fa-grimace {
+    font-size: 45px;
+    color: rgb(70, 73, 75);
+    text-shadow: 0.5 0.5 20px rgb(228, 234, 240);
 }
