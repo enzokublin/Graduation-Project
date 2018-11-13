@@ -263,4 +263,71 @@
             }
         }
     });
+    $("#abalone-rules").click(function() {
+        var rulesContainer = `
+        <div id="rules-container">
+            <h3 id="h3-rules">Rules</h3>
+            <p id="top-rule-p">The basic version of the classical board game “Abalone“ is played by two players. Each player has 14 marbles of which maximum 3 can be moved at the same time. Therefore, one move can include 1, 2 or 3 of the own marbles. Within one move
+                the marbles can be pushed in all possible directions. </p>
+            <p id="middle-rule-p">The ultimate objective of the game is to push 6 of the opponents marbles out of the game. In order to push the opponents marbles the current player must have at least one marble more than his counterpart in the line in which direction he
+                wants to move them. </p>
+            <p id="bottom-rule-p">
+                Meaning 3 marbles can push 2 or 1 while 2 can only move 1 opponent one. Remember, because maximum 3 of the player’s own marbles can be moved at the same time, it’s not possible to push 3 opponent one’s by 4 own
+                marbles.
+            </p>
+        </div>`;
+
+        $("#primary-container").append(rulesContainer);
+    });
+
+    $("#h3-rules").on("click", function(e) {
+        $("#rules-container").remove();
+        e.preventDefault();
+    });
+
+    $("#counter-player-I").each(function() {
+        var $this = $(this),
+            countTo = $this.attr("data-count");
+
+        $({ countNum: $this.text() }).animate(
+            {
+                countNum: countTo
+            },
+
+            {
+                duration: 8000,
+                easing: "linear",
+                step: function() {
+                    $this.text(Math.floor(this.countNum));
+                },
+                complete: function() {
+                    $this.text(this.countNum);
+                    //alert('finished');
+                }
+            }
+        );
+    });
+
+    $("#counter-player-II").each(function() {
+        var $this = $(this),
+            countTo = $this.attr("data-count");
+
+        $({ countNum: $this.text() }).animate(
+            {
+                countNum: countTo
+            },
+
+            {
+                duration: 8000,
+                easing: "linear",
+                step: function() {
+                    $this.text(Math.floor(this.countNum));
+                },
+                complete: function() {
+                    $this.text(this.countNum);
+                    //alert('finished');
+                }
+            }
+        );
+    });
 })();
