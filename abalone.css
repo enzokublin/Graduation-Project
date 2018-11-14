@@ -131,6 +131,38 @@ i.fas.fa-bowling-ball {
 /* ########################################################################## */
 /* ########################################################################## */
 
+/* i.fas.fa-arrow-up {
+    font-size: 35px;
+    color: rgb(228, 234, 240);
+    text-shadow: -1 -1 20px rgba(0, 0, 0, 1);
+    position: absolute;
+}
+
+i.fas.fa-arrow-down {
+    font-size: 35px;
+    color: rgb(228, 234, 240);
+    text-shadow: -1 -1 20px rgba(0, 0, 0, 1);
+    position: absolute;
+}
+
+i.fas.fa-arrow-right {
+    font-size: 35px;
+    color: rgb(228, 234, 240);
+    text-shadow: -1 -1 20px rgba(0, 0, 0, 1);
+    position: absolute;
+}
+
+i.fas.fa-arrow-left {
+    font-size: 35px;
+    color: rgb(228, 234, 240);
+    text-shadow: -1 -1 20px rgba(0, 0, 0, 1);
+    position: absolute;
+} */
+
+/* ########################################################################## */
+/* ########################################################################## */
+/* ########################################################################## */
+
 #player-box-I {
     display: flex;
     justify-content: center;
@@ -175,12 +207,23 @@ i.fas.fa-bowling-ball {
     height: 30px;
     background-color: rgb(108, 16, 16);
     padding: 30px 44px 42px 29px;
-    margin: 15px 114px 0px 0px;
+    margin: 15px 5px 0px 0px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 1);
     /* border: 2px solid rgba(0, 0, 0, 1); */
     border-radius: 8px;
 }
 
+#directions-player-I {
+    width: 103px;
+    height: 89px;
+    background-color: rgb(108, 16, 16);
+    padding: 10px 0px 0px 0px;
+    margin: 15px 0px 0px 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+    /* border: 2px solid rgba(0, 0, 0, 1); */
+    border-radius: 8px;
+    text-align: center;
+}
 /* ########################################################################## */
 /* ########################################################################## */
 /* ########################################################################## */
@@ -229,12 +272,23 @@ i.fas.fa-bowling-ball {
     height: 30px;
     background-color: rgb(6, 35, 92);
     padding: 30px 44px 42px 29px;
-    margin: 15px 114px 0px 0px;
+    margin: 15px 5px 0px 0px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 1);
     /* border: 2px solid rgba(0, 0, 0, 1); */
     border-radius: 8px;
 }
 
+#directions-player-II {
+    width: 103px;
+    height: 89px;
+    background-color: rgb(6, 35, 92);
+    padding: 10px 0px 0px 0px;
+    margin: 15px 0px 0px 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+    /* border: 2px solid rgba(0, 0, 0, 1); */
+    border-radius: 8px;
+    text-align: center;
+}
 /* ############################################################# */
 /* ############################################################# */
 /* ############################################################# */
@@ -484,7 +538,7 @@ i.fas.fa-bowling-ball {
 .out {
     width: 30px;
     height: 30px;
-    margin: 0px 0px 10px 10px;
+    margin: 0px 0px 5px 9px;
     padding: 10px 10px;
     border-radius: 50%;
 }
@@ -501,7 +555,7 @@ i.fas.fa-bowling-ball {
     width: 30px;
     height: 30px;
     margin: 0px 0px;
-    padding: 0px 10px 0px 4px;
+    padding: 0px 10px 0px 5px;
     border-radius: 50%;
 }
 
@@ -509,7 +563,7 @@ i.fas.fa-bowling-ball {
     width: 30px;
     height: 30px;
     margin: 0px 13px;
-    padding: 0px 9px 0px 5px;
+    padding: 0px 5px 0px 5px;
     border-radius: 50%;
 }
 

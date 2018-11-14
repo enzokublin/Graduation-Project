@@ -3,39 +3,49 @@
     var currentPlayer = playerOne;
     var playerTwo = "player-2";
     var marbles = $(".marbles");
+    // var opponentPlayer = playerTwo;
+    var countSelectedMarblesForNextMove = [];
     var selectedMarble;
     var turnCounter = 0;
+    // var turnCounter2 = 1;
     // var countMarblesPlayerOne = $("playerOne").length;
     // var countMarblesPlayerTwo = $("playerTwo").length;
 
     $(".marbles").click(function(e) {
         var findMarblesAndPlayers = $(e.currentTarget).find(marbles);
 
-        if (!$(e.currentTarget).hasClass(currentPlayer) && !selectedMarble) {
-            return;
-        }
+        // if (!$(e.currentTarget).hasClass(currentPlayer) && !selectedMarble) {
+        //     return;
+        // }
+
         turnCounter++;
         console.log("happy counter:", turnCounter);
 
-        if (turnCounter == 1) {
-            selectedMarble = $(e.currentTarget);
-            console.log("happy running:", selectedMarble);
+        if ($(e.currentTarget).hasClass(currentPlayer)) {
+            countSelectedMarblesForNextMove.push($(e.currentTarget));
+        }
+
+        // if (turnCounter !== 2) {
+        //     return;
+        // }
+
+        if (turnCounter !== 3) {
             return;
         }
 
-        // if (turnCounter == 2) {
-        //     selectedMarble = $(e.currentTarget);
-        //     console.log("happy running2:", selectedMarble);
-        //     return;
-        // }
-        //
-        // if (turnCounter == 3) {
-        //     selectedMarble = $(e.currentTarget);
-        //     console.log("happy running3:", selectedMarble);
+        // if (turnCounter !== 4) {
         //     return;
         // }
 
-        console.log("happy marbles:", selectedMarble);
+        console.log("happy count:", countSelectedMarblesForNextMove);
+        // if (turnCounter == 1) {
+        //     selectedMarble = $(e.currentTarget);
+        //     return;
+        // }
+
+        if (userSelection == currentPlayer) {
+            selectedMarble = $(e.currentTarget);
+        }
 
         var rowsLogic = [
             {
@@ -126,36 +136,26 @@
                 incrementerDownRight = rowsLogic[i].incrDownRight;
                 incrementerDownLeft = rowsLogic[i].incrDownLeft;
             }
-            console.log("amazing for loop:", incrementerRight);
 
             function adjacentMoveCheck() {
                 if ($("#" + (userSelection - 1)).hasClass(currentPlayer)) {
-                    console.log("happy minus 1");
-
                     return true;
                 }
                 if ($("#" + (userSelection + 1)).hasClass(currentPlayer)) {
-                    console.log("happy plus 1");
                     return true;
                 } else {
                     return false;
                 }
             }
-            console.log("happy adjacent:", adjacentMoveCheck());
+
             let turnNextDoor = adjacentMoveCheck();
 
             function belowMoveCheck() {
-                console.log(
-                    "happy player:",
-                    userSelection - (incrementerRight + 1)
-                );
-
                 if (
                     $("#" + (userSelection - incrementerRight + 1)).hasClass(
                         currentPlayer
                     )
                 ) {
-                    console.log("happy plus 8");
                     return true;
                 }
                 if (
@@ -163,7 +163,6 @@
                         currentPlayer
                     )
                 ) {
-                    console.log("happy plus 7");
                     return true;
                 } else {
                     return false;
@@ -178,7 +177,6 @@
                         currentPlayer
                     )
                 ) {
-                    console.log("happy minus 7");
                     return true;
                 }
                 if (
@@ -186,7 +184,6 @@
                         currentPlayer
                     )
                 ) {
-                    console.log("happy minus 6");
                     return true;
                 } else {
                     return false;
@@ -195,12 +192,31 @@
 
             let turnUpwards = aboveMoveCheck();
 
-            function downMoveBelowCheck() {
+            // #################################################################
+            // #################################################################
+            // #################################################################
+            function downMoveAboveCheck() {
                 if (
                     $(
-                        "#" + (userSelection - incrementerDownRight) - 1
+                        "#" + (userSelection - incrementerDownRight - 1)
                     ).hasClass(currentPlayer)
                 ) {
+                    return true;
+                } else if (
+                    $(
+                        "#" + (userSelection - incrementerDownRight - 2)
+                    ).hasClass(currentPlayer)
+                ) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+
+            let turnTop = downMoveAboveCheck();
+
+            function downMoveBelowCheck() {
+                if ($("#" + (userSelection - incrementerDownRight) - 1)) {
                     console.log("happy downwards:", userSelection);
                     // $(e.currentTarget).addClass(currentPlayer);
                     return true;
@@ -211,49 +227,46 @@
 
             let turnBottom = downMoveBelowCheck();
 
-            if (turnNextDoor || turnDownwards || turnUpwards || turnBottom) {
+            // ############################################################################
+
+            if (
+                turnNextDoor ||
+                turnDownwards ||
+                turnUpwards ||
+                turnBottom ||
+                turnTop
+            ) {
+                for (
+                    var j = 0;
+                    j < countSelectedMarblesForNextMove.length;
+                    j++
+                ) {
+                    countSelectedMarblesForNextMove[j].removeClass(
+                        currentPlayer
+                    );
+                }
+
+                $("#" + (userSelection - 1)).addClass(currentPlayer);
                 turnCounter = 0;
-                selectedMarble.removeClass(currentPlayer);
+                // selectedMarble.removeClass(currentPlayer);
                 console.log("happy functions");
                 $(e.currentTarget).addClass(currentPlayer);
                 switchPlayers();
+                return;
             }
         }
 
         // #####################################################################
         // #####################################################################
         // #####################################################################
-        function downMoveAboveCheck() {
-            if (
-                $("#" + (userSelection - incrementerDownRight) - 1).hasClass(
-                    currentPlayer
-                )
-            ) {
-                console.log("happy downwards:", userSelection);
-                $(e.currentTarget).addClass(currentPlayer);
-                return true;
-            } else {
-                return false;
-            }
-        }
 
-        let turnTop = downMoveAboveCheck();
-
-        // function downMoveBelowCheck() {
-        //     if ($("#" + (userSelection - incrementerDownRight) - 1)) {
-        //         console.log("happy downwards:", userSelection);
-        //         // $(e.currentTarget).addClass(currentPlayer);
-        //         return true;
+        // function switchOpponentPlayers() {
+        //     if (opponentPlayer == playerTwo) {
+        //         opponentPlayer = playerOne;
         //     } else {
-        //         return false;
+        //         opponentPlayer = playerTwo;
         //     }
         // }
-        //
-        // let turnBottom = downMoveBelowCheck();
-
-        // #####################################################################
-        // #####################################################################
-        // #####################################################################
 
         function switchPlayers() {
             if (currentPlayer == playerOne) {
@@ -263,7 +276,8 @@
             }
         }
     });
-    $("#abalone-rules").click(function() {
+
+    $("#abalone-rules").click(function(e) {
         var rulesContainer = `
         <div id="rules-container">
             <h3 id="h3-rules">Rules</h3>
@@ -278,11 +292,10 @@
         </div>`;
 
         $("#primary-container").append(rulesContainer);
-    });
-
-    $("#h3-rules").on("click", function(e) {
-        $("#rules-container").remove();
-        e.preventDefault();
+        e.stopPropagation(e);
+        $(document).on("click", function() {
+            $("#rules-container").remove();
+        });
     });
 
     $("#counter-player-I").each(function() {
