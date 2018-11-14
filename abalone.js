@@ -293,7 +293,7 @@
 
         $("#primary-container").append(rulesContainer);
         e.stopPropagation(e);
-        $(document).on("click", function() {
+        $("#h3-rules").on("click", function() {
             $("#rules-container").remove();
         });
     });
