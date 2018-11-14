@@ -7,7 +7,7 @@
     var countSelectedMarblesForNextMove = [];
     var selectedMarble;
     var turnCounter = 0;
-    // var turnCounter2 = 1;
+
     // var countMarblesPlayerOne = $("playerOne").length;
     // var countMarblesPlayerTwo = $("playerTwo").length;
 
@@ -25,23 +25,25 @@
             countSelectedMarblesForNextMove.push($(e.currentTarget));
         }
 
-        // if (turnCounter !== 2) {
-        //     return;
-        // }
-
-        if (turnCounter !== 3) {
+        if (turnCounter !== 2 && $(e.currentTarget).hasClass(currentPlayer)) {
+            return;
+        } else if (
+            turnCounter !== 3 &&
+            $(e.currentTarget).hasClass(currentPlayer)
+        ) {
+            return;
+        } else if (
+            turnCounter !== 4 &&
+            $(e.currentTarget).hasClass(currentPlayer)
+        ) {
             return;
         }
 
-        // if (turnCounter !== 4) {
-        //     return;
-        // }
-
         console.log("happy count:", countSelectedMarblesForNextMove);
-        // if (turnCounter == 1) {
-        //     selectedMarble = $(e.currentTarget);
-        //     return;
-        // }
+        if (turnCounter == 1) {
+            // selectedMarble = $(e.currentTarget);
+            return;
+        }
 
         if (userSelection == currentPlayer) {
             selectedMarble = $(e.currentTarget);
@@ -246,11 +248,27 @@
                     );
                 }
 
-                $("#" + (userSelection - 1)).addClass(currentPlayer);
+                if (countSelectedMarblesForNextMove.length == 1) {
+                    $(e.currentTarget).addClass(currentPlayer);
+                    console.log("happy great run");
+                } else if (countSelectedMarblesForNextMove.length == 2) {
+                    $("#" + (userSelection - 1)).addClass(currentPlayer);
+                    $(e.currentTarget).addClass(currentPlayer);
+                    console.log("happy made");
+                } else if (countSelectedMarblesForNextMove.length == 3) {
+                    $("#" + (userSelection - 1)).addClass(currentPlayer);
+                    $("#" + (userSelection - 2)).addClass(currentPlayer);
+                    $(e.currentTarget).addClass(currentPlayer);
+                    console.log("amazing run");
+                }
+
+                // $("#" + (userSelection - 1)).addClass(currentPlayer);
+                // $("#" + (userSelection - 2)).addClass(currentPlayer);
+                countSelectedMarblesForNextMove = [];
                 turnCounter = 0;
                 // selectedMarble.removeClass(currentPlayer);
                 console.log("happy functions");
-                $(e.currentTarget).addClass(currentPlayer);
+                // $(e.currentTarget).addClass(currentPlayer);
                 switchPlayers();
                 return;
             }
