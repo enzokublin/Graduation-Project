@@ -3,8 +3,9 @@
     var currentPlayer = playerOne;
     var playerTwo = "player-2";
     var marbles = $(".marbles");
-    // var opponentPlayer = playerTwo;
+    var opponentPlayer = playerTwo;
     var countSelectedMarblesForNextMove = [];
+    // var getOpponentMarblesForStrike = [];
     var selectedMarble;
     var turnCounter = 0;
 
@@ -229,7 +230,102 @@
 
             let turnBottom = downMoveBelowCheck();
 
-            // ############################################################################
+            // #################################################################
+            // #################################################################
+            // #################################################################
+            var countNumberOfCurrentPlayerMarbles = function() {
+                // #############################################################
+                if (countSelectedMarblesForNextMove.length === 3) {
+                    console.log(
+                        "happy count1 number: ",
+                        countNumberOfCurrentPlayerMarbles
+                    );
+
+                    for (
+                        var l = 0;
+                        l < countSelectedMarblesForNextMove.length;
+                        l++
+                    ) {
+                        countSelectedMarblesForNextMove[l].removeClass(
+                            currentPlayer
+                        );
+                    }
+                    for (
+                        var m = 0;
+                        m < countSelectedMarblesForNextMove.length;
+                        m++
+                    ) {
+                        var threeMarblesPush = parseInt(
+                            countSelectedMarblesForNextMove[m].text()
+                        );
+                        $("#" + (threeMarblesPush + 1)).addClass(currentPlayer);
+                    }
+
+                    var opponentPlayerMarblesText = parseInt(
+                        $(e.currentTarget).text()
+                    );
+                    if (
+                        $("#" + (opponentPlayerMarblesText + 1)).hasClass(
+                            opponentPlayer
+                        )
+                    ) {
+                        $("#" + (opponentPlayerMarblesText + 2)).addClass(
+                            opponentPlayer
+                        );
+                    }
+                    $("#" + (opponentPlayerMarblesText + 1)).addClass(
+                        opponentPlayer
+                    );
+                    $(e.currentTarget).removeClass(opponentPlayer);
+                }
+
+                // #############################################################
+                // ############################ Move One with Two ##############
+                // #############################################################
+
+                if (countSelectedMarblesForNextMove.length === 2) {
+                    console.log("happy push:");
+                    // return true;
+                    for (
+                        var idx = 0;
+                        idx < countSelectedMarblesForNextMove.length;
+                        idx++
+                    ) {
+                        countSelectedMarblesForNextMove[idx].removeClass(
+                            currentPlayer
+                        );
+                    }
+                    for (
+                        var k = 0;
+                        k < countSelectedMarblesForNextMove.length;
+                        k++
+                    ) {
+                        var marbleText = parseInt(
+                            countSelectedMarblesForNextMove[k].text()
+                        );
+                        $("#" + (marbleText + 1)).addClass(currentPlayer);
+                    }
+
+                    var opponentPlayerMarblesNum = parseInt(
+                        $(e.currentTarget).text()
+                    );
+                    $("#" + (opponentPlayerMarblesNum + 1)).addClass(
+                        opponentPlayer
+                    );
+                    $(e.currentTarget).removeClass(opponentPlayer);
+                }
+            };
+
+            // if ($(e.currentTarget).hasClass(opponentPlayer)) {
+            //     getOpponentMarblesForStrike.push($(e.currentTarget));
+            // }
+
+            if ($(e.currentTarget).hasClass(opponentPlayer)) {
+                countNumberOfCurrentPlayerMarbles();
+            }
+            // #################################################################
+            // #################################################################
+            // #################################################################
 
             if (
                 turnNextDoor ||
@@ -250,26 +346,26 @@
 
                 if (countSelectedMarblesForNextMove.length == 1) {
                     $(e.currentTarget).addClass(currentPlayer);
-                    console.log("happy great run");
                 } else if (countSelectedMarblesForNextMove.length == 2) {
                     $("#" + (userSelection - 1)).addClass(currentPlayer);
                     $(e.currentTarget).addClass(currentPlayer);
-                    console.log("happy made");
                 } else if (countSelectedMarblesForNextMove.length == 3) {
                     $("#" + (userSelection - 1)).addClass(currentPlayer);
                     $("#" + (userSelection - 2)).addClass(currentPlayer);
                     $(e.currentTarget).addClass(currentPlayer);
-                    console.log("amazing run");
                 }
 
                 // $("#" + (userSelection - 1)).addClass(currentPlayer);
                 // $("#" + (userSelection - 2)).addClass(currentPlayer);
+
                 countSelectedMarblesForNextMove = [];
+
                 turnCounter = 0;
                 // selectedMarble.removeClass(currentPlayer);
-                console.log("happy functions");
                 // $(e.currentTarget).addClass(currentPlayer);
                 switchPlayers();
+                switchOpponentPlayers();
+                seeWhoseTurnItIs();
                 return;
             }
         }
@@ -277,14 +373,6 @@
         // #####################################################################
         // #####################################################################
         // #####################################################################
-
-        // function switchOpponentPlayers() {
-        //     if (opponentPlayer == playerTwo) {
-        //         opponentPlayer = playerOne;
-        //     } else {
-        //         opponentPlayer = playerTwo;
-        //     }
-        // }
 
         function switchPlayers() {
             if (currentPlayer == playerOne) {
@@ -294,6 +382,43 @@
             }
         }
     });
+
+    function switchOpponentPlayers() {
+        if (opponentPlayer == playerTwo) {
+            opponentPlayer = playerOne;
+        } else {
+            opponentPlayer = playerTwo;
+        }
+    }
+
+    var seeWhoseTurnItIs = function() {
+        var animationName = "animated flip";
+        var animationEnd = "animationend";
+
+        if (currentPlayer == playerOne) {
+            $("#player-1-box").click(function() {
+                $("#player-1-box")
+                    .addClass(animationName)
+                    .on(animationEnd, function() {
+                        console.log("end animation");
+                        $("#player-1-box").removeClass(animationName);
+                        // e.stopPropagation(e);
+                    });
+            });
+        }
+
+        if (currentPlayer == playerTwo) {
+            $("#player-2-box").click(function() {
+                $("#player-2-box")
+                    .addClass(animationName)
+                    .on(animationEnd, function() {
+                        $("#player-2-box").removeClass(animationName);
+                        // e.stopPropagation(e);
+                    });
+            });
+        }
+    };
+    seeWhoseTurnItIs();
 
     $("#abalone-rules").click(function(e) {
         var rulesContainer = `
