@@ -6,7 +6,11 @@
     var opponentPlayer = playerTwo;
     var countSelectedMarblesForNextMove = [];
     // var getOpponentMarblesForStrike = [];
+    var player1Score = 0;
+    var player2Score = 0;
     var selectedMarble;
+    var countPlayerOneMarblesOnTheField;
+
     var turnCounter = 0;
 
     // var countMarblesPlayerOne = $("playerOne").length;
@@ -15,12 +19,7 @@
     $(".marbles").click(function(e) {
         var findMarblesAndPlayers = $(e.currentTarget).find(marbles);
 
-        // if (!$(e.currentTarget).hasClass(currentPlayer) && !selectedMarble) {
-        //     return;
-        // }
-
         turnCounter++;
-        console.log("happy counter:", turnCounter);
 
         if ($(e.currentTarget).hasClass(currentPlayer)) {
             countSelectedMarblesForNextMove.push($(e.currentTarget));
@@ -40,7 +39,6 @@
             return;
         }
 
-        console.log("happy count:", countSelectedMarblesForNextMove);
         if (turnCounter == 1) {
             // selectedMarble = $(e.currentTarget);
             return;
@@ -124,20 +122,49 @@
             }
         ];
 
+        var edgeCase = [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            11,
+            12,
+            18,
+            19,
+            26,
+            27,
+            35,
+            36,
+            43,
+            44,
+            50,
+            51,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61
+        ];
+
+        // var spotOpponentPlayerMarblesLocationOnField;
+
         var userSelection = parseInt($(e.currentTarget).text());
         var incrementerRight;
-        var incrementerLeft;
+        // var incrementerLeft;
         var incrementerDownRight;
-        var incrementerDownLeft;
+        // var incrementerDownLeft;
 
         for (var i = 0; i < rowsLogic.length; i++) {
             if (rowsLogic[i].row.indexOf(parseInt(userSelection)) !== -1) {
                 incrementerRight = rowsLogic[i].incrRight;
                 // the incrementer variable tells me on which line the div is at whick I clicked.
                 //the userSelection variable tells me the number of the div I clicked on.
-                incrementerLeft = rowsLogic[i].incrLeft;
+                // incrementerLeft = rowsLogic[i].incrLeft;
                 incrementerDownRight = rowsLogic[i].incrDownRight;
-                incrementerDownLeft = rowsLogic[i].incrDownLeft;
+                // incrementerDownLeft = rowsLogic[i].incrDownLeft;
             }
 
             function adjacentMoveCheck() {
@@ -220,7 +247,6 @@
 
             function downMoveBelowCheck() {
                 if ($("#" + (userSelection - incrementerDownRight) - 1)) {
-                    console.log("happy downwards:", userSelection);
                     // $(e.currentTarget).addClass(currentPlayer);
                     return true;
                 } else {
@@ -229,18 +255,54 @@
             }
 
             let turnBottom = downMoveBelowCheck();
+            // ###############################################################
+            // #####################Push To the Left #########################
+            // ###############################################################
+            // var countCurrentPlayerMarblesForPushingLeft = function() {
+            //     if (countSelectedMarblesForNextMove.length === 3) {
+            //         for (
+            //             var g = 0;
+            //             g < countSelectedMarblesForNextMove.length;
+            //             g++
+            //         ) {
+            //             countSelectedMarblesForNextMove[g].removeClass(
+            //                 currentPlayer
+            //             );
+            //         }
+            //         for (
+            //             var n = 0;
+            //             n < countSelectedMarblesForNextMove.length;
+            //             n++
+            //         ) {
+            //             var threeMarblesPush = parseInt(
+            //                 countSelectedMarblesForNextMove[m].text()
+            //             );
+            //             $("#" + (threeMarblesPush - 1)).addClass(currentPlayer);
+            //         }
+            //
+            //         var opponentPlayerMarblesText = parseInt(
+            //             $(e.currentTarget).text()
+            //         );
+            //         if (
+            //             $("#" + (opponentPlayerMarblesText - 1)).hasClass(
+            //                 opponentPlayer
+            //             )
+            //         ) {
+            //             $("#" + (opponentPlayerMarblesText - 2)).addClass(
+            //                 opponentPlayer
+            //             );
+            //         }
+            //         $("#" + (opponentPlayerMarblesText - 1)).addClass(
+            //             opponentPlayer
+            //         );
+            //         $(e.currentTarget).removeClass(opponentPlayer);
+            //     }
 
             // #################################################################
+            // ####### Push opponentPlayer Marbles To The Right ################
             // #################################################################
-            // #################################################################
-            var countNumberOfCurrentPlayerMarbles = function() {
-                // #############################################################
+            var countCurrentPlayerMarblesForPushingRight = function() {
                 if (countSelectedMarblesForNextMove.length === 3) {
-                    console.log(
-                        "happy count1 number: ",
-                        countNumberOfCurrentPlayerMarbles
-                    );
-
                     for (
                         var l = 0;
                         l < countSelectedMarblesForNextMove.length;
@@ -264,6 +326,19 @@
                     var opponentPlayerMarblesText = parseInt(
                         $(e.currentTarget).text()
                     );
+                    for (var f = 0; f < edgeCase.length; f++) {
+                        if (opponentPlayerMarblesText + 1 == edgeCase[f]) {
+                            $(
+                                "#" + (opponentPlayerMarblesText + 1)
+                            ).removeClass(opponentPlayer);
+                            console.log("happy don't add");
+                            if (currentPlayer == "player-1") {
+                                player1Score++;
+                            } else {
+                                player2Score++;
+                            }
+                        }
+                    }
                     if (
                         $("#" + (opponentPlayerMarblesText + 1)).hasClass(
                             opponentPlayer
@@ -280,12 +355,10 @@
                 }
 
                 // #############################################################
-                // ############################ Move One with Two ##############
+                // ############### Move One with Two To the Right ##############
                 // #############################################################
 
                 if (countSelectedMarblesForNextMove.length === 2) {
-                    console.log("happy push:");
-                    // return true;
                     for (
                         var idx = 0;
                         idx < countSelectedMarblesForNextMove.length;
@@ -321,8 +394,16 @@
             // }
 
             if ($(e.currentTarget).hasClass(opponentPlayer)) {
-                countNumberOfCurrentPlayerMarbles();
+                countCurrentPlayerMarblesForPushingRight();
+                // countCurrentPlayerMarblesForPushingLeft()
             }
+
+            // var countPlayerOneMarblesOnTheField = function() {
+            //     for (var i = 0; i < rowsLogic.row.length; i++) {
+            //         rowsLogic[i];
+            //     }
+            // };
+
             // #################################################################
             // #################################################################
             // #################################################################
@@ -364,8 +445,8 @@
                 // selectedMarble.removeClass(currentPlayer);
                 // $(e.currentTarget).addClass(currentPlayer);
                 switchPlayers();
-                switchOpponentPlayers();
                 seeWhoseTurnItIs();
+                switchOpponentPlayers();
                 return;
             }
         }
@@ -394,21 +475,22 @@
     var seeWhoseTurnItIs = function() {
         var animationName = "animated flip";
         var animationEnd = "animationend";
-
-        if (currentPlayer == playerOne) {
+        console.log("happy current player:", currentPlayer);
+        console.log("happy playerOne:", playerOne);
+        if (currentPlayer === playerOne) {
             $("#player-1-box").click(function() {
+                // console.log("happy current player:", currentPlayer);
                 $("#player-1-box")
                     .addClass(animationName)
                     .on(animationEnd, function() {
                         console.log("end animation");
                         $("#player-1-box").removeClass(animationName);
-                        // e.stopPropagation(e);
                     });
             });
         }
-
-        if (currentPlayer == playerTwo) {
+        if (currentPlayer === playerTwo) {
             $("#player-2-box").click(function() {
+                console.log("happy current player2:", currentPlayer);
                 $("#player-2-box")
                     .addClass(animationName)
                     .on(animationEnd, function() {
