@@ -10,6 +10,9 @@
     var player2Score = 0;
     var selectedMarble;
     var countPlayerOneMarblesOnTheField;
+    var marblesSequence;
+    var onlyOneMarbleSelected;
+    var horizontalLineIsSelected;
 
     var turnCounter = 0;
 
@@ -19,11 +22,51 @@
     $(".marbles").click(function(e) {
         var findMarblesAndPlayers = $(e.currentTarget).find(marbles);
 
-        turnCounter++;
-
         if ($(e.currentTarget).hasClass(currentPlayer)) {
             countSelectedMarblesForNextMove.push($(e.currentTarget));
         }
+
+        var checkSequence = function() {
+            for (var x = 0; x < countSelectedMarblesForNextMove.length; x++) {
+                var pushMarblesDiagonal = parseInt(
+                    countSelectedMarblesForNextMove[x].text()
+                );
+
+                if (onlyOneMarbleSelected !== true) {
+                    if (x == 2 || x == 1) {
+                        return;
+                    }
+
+                    var moveMarblesDiagonal = parseInt(
+                        countSelectedMarblesForNextMove[x + 1].text()
+                    );
+
+                    if (pushMarblesDiagonal + 1 === moveMarblesDiagonal) {
+                        marblesSequence = true;
+                    }
+                }
+            }
+        };
+
+        if (countSelectedMarblesForNextMove.length > 1) {
+            if (marblesSequence == true) {
+                horizontalLineIsSelected = true;
+            }
+        }
+
+        if (countSelectedMarblesForNextMove.length > 1) {
+            checkSequence();
+        }
+
+        if (
+            !$(e.currentTarget).hasClass(playerOne) &&
+            !$(e.currentTarget).hasClass(playerTwo) &&
+            countSelectedMarblesForNextMove.length == 1
+        ) {
+            onlyOneMarbleSelected = true;
+        }
+
+        turnCounter++;
 
         if (turnCounter !== 2 && $(e.currentTarget).hasClass(currentPlayer)) {
             return;
@@ -40,7 +83,6 @@
         }
 
         if (turnCounter == 1) {
-            // selectedMarble = $(e.currentTarget);
             return;
         }
 
@@ -149,8 +191,6 @@
             61
         ];
 
-        // var spotOpponentPlayerMarblesLocationOnField;
-
         var userSelection = parseInt($(e.currentTarget).text());
         var incrementerRight;
         // var incrementerLeft;
@@ -255,48 +295,6 @@
             }
 
             let turnBottom = downMoveBelowCheck();
-            // ###############################################################
-            // #####################Push To the Left #########################
-            // ###############################################################
-            // var countCurrentPlayerMarblesForPushingLeft = function() {
-            //     if (countSelectedMarblesForNextMove.length === 3) {
-            //         for (
-            //             var g = 0;
-            //             g < countSelectedMarblesForNextMove.length;
-            //             g++
-            //         ) {
-            //             countSelectedMarblesForNextMove[g].removeClass(
-            //                 currentPlayer
-            //             );
-            //         }
-            //         for (
-            //             var n = 0;
-            //             n < countSelectedMarblesForNextMove.length;
-            //             n++
-            //         ) {
-            //             var threeMarblesPush = parseInt(
-            //                 countSelectedMarblesForNextMove[m].text()
-            //             );
-            //             $("#" + (threeMarblesPush - 1)).addClass(currentPlayer);
-            //         }
-            //
-            //         var opponentPlayerMarblesText = parseInt(
-            //             $(e.currentTarget).text()
-            //         );
-            //         if (
-            //             $("#" + (opponentPlayerMarblesText - 1)).hasClass(
-            //                 opponentPlayer
-            //             )
-            //         ) {
-            //             $("#" + (opponentPlayerMarblesText - 2)).addClass(
-            //                 opponentPlayer
-            //             );
-            //         }
-            //         $("#" + (opponentPlayerMarblesText - 1)).addClass(
-            //             opponentPlayer
-            //         );
-            //         $(e.currentTarget).removeClass(opponentPlayer);
-            //     }
 
             // #################################################################
             // ####### Push opponentPlayer Marbles To The Right ################
@@ -312,6 +310,7 @@
                             currentPlayer
                         );
                     }
+
                     for (
                         var m = 0;
                         m < countSelectedMarblesForNextMove.length;
@@ -321,17 +320,25 @@
                             countSelectedMarblesForNextMove[m].text()
                         );
                         $("#" + (threeMarblesPush + 1)).addClass(currentPlayer);
+                        // $("#" + (threeMarblesPush - 1)).addClass(currentPlayer);
                     }
 
                     var opponentPlayerMarblesText = parseInt(
                         $(e.currentTarget).text()
                     );
                     for (var f = 0; f < edgeCase.length; f++) {
-                        if (opponentPlayerMarblesText + 1 == edgeCase[f]) {
+                        if (
+                            opponentPlayerMarblesText + 1 ==
+                            edgeCase[f]
+                            // opponentPlayerMarblesText - 1 == edgeCase[f]
+                        ) {
                             $(
                                 "#" + (opponentPlayerMarblesText + 1)
                             ).removeClass(opponentPlayer);
-                            console.log("happy don't add");
+                            // $(
+                            //     "#" + (opponentPlayerMarblesText - 1)
+                            // ).removeClass(opponentPlayer);
+
                             if (currentPlayer == "player-1") {
                                 player1Score++;
                             } else {
@@ -368,6 +375,7 @@
                             currentPlayer
                         );
                     }
+
                     for (
                         var k = 0;
                         k < countSelectedMarblesForNextMove.length;
@@ -389,20 +397,9 @@
                 }
             };
 
-            // if ($(e.currentTarget).hasClass(opponentPlayer)) {
-            //     getOpponentMarblesForStrike.push($(e.currentTarget));
-            // }
-
             if ($(e.currentTarget).hasClass(opponentPlayer)) {
                 countCurrentPlayerMarblesForPushingRight();
-                // countCurrentPlayerMarblesForPushingLeft()
             }
-
-            // var countPlayerOneMarblesOnTheField = function() {
-            //     for (var i = 0; i < rowsLogic.row.length; i++) {
-            //         rowsLogic[i];
-            //     }
-            // };
 
             // #################################################################
             // #################################################################
@@ -415,35 +412,40 @@
                 turnBottom ||
                 turnTop
             ) {
-                for (
-                    var j = 0;
-                    j < countSelectedMarblesForNextMove.length;
-                    j++
-                ) {
-                    countSelectedMarblesForNextMove[j].removeClass(
+                if (horizontalLineIsSelected === true) {
+                    for (
+                        var j = 0;
+                        j < countSelectedMarblesForNextMove.length;
+                        j++
+                    ) {
+                        countSelectedMarblesForNextMove[j].removeClass(
+                            currentPlayer
+                        );
+                    }
+                }
+
+                if (marblesSequence == true) {
+                    if (countSelectedMarblesForNextMove.length == 1) {
+                        $(e.currentTarget).addClass(currentPlayer);
+                    } else if (countSelectedMarblesForNextMove.length == 2) {
+                        $("#" + (userSelection - 1)).addClass(currentPlayer);
+                        $(e.currentTarget).addClass(currentPlayer);
+                    } else if (countSelectedMarblesForNextMove.length == 3) {
+                        $("#" + (userSelection - 1)).addClass(currentPlayer);
+                        $("#" + (userSelection - 2)).addClass(currentPlayer);
+                        $(e.currentTarget).addClass(currentPlayer);
+                    }
+                } else {
+                    countSelectedMarblesForNextMove[0].removeClass(
                         currentPlayer
                     );
+                    $("#" + userSelection).addClass(currentPlayer);
                 }
-
-                if (countSelectedMarblesForNextMove.length == 1) {
-                    $(e.currentTarget).addClass(currentPlayer);
-                } else if (countSelectedMarblesForNextMove.length == 2) {
-                    $("#" + (userSelection - 1)).addClass(currentPlayer);
-                    $(e.currentTarget).addClass(currentPlayer);
-                } else if (countSelectedMarblesForNextMove.length == 3) {
-                    $("#" + (userSelection - 1)).addClass(currentPlayer);
-                    $("#" + (userSelection - 2)).addClass(currentPlayer);
-                    $(e.currentTarget).addClass(currentPlayer);
-                }
-
-                // $("#" + (userSelection - 1)).addClass(currentPlayer);
-                // $("#" + (userSelection - 2)).addClass(currentPlayer);
 
                 countSelectedMarblesForNextMove = [];
 
                 turnCounter = 0;
-                // selectedMarble.removeClass(currentPlayer);
-                // $(e.currentTarget).addClass(currentPlayer);
+
                 switchPlayers();
                 seeWhoseTurnItIs();
                 switchOpponentPlayers();
@@ -475,11 +477,10 @@
     var seeWhoseTurnItIs = function() {
         var animationName = "animated flip";
         var animationEnd = "animationend";
-        console.log("happy current player:", currentPlayer);
-        console.log("happy playerOne:", playerOne);
+
         if (currentPlayer === playerOne) {
+            $("#player-2-box").removeClass(animationName);
             $("#player-1-box").click(function() {
-                // console.log("happy current player:", currentPlayer);
                 $("#player-1-box")
                     .addClass(animationName)
                     .on(animationEnd, function() {
@@ -488,14 +489,15 @@
                     });
             });
         }
+
         if (currentPlayer === playerTwo) {
+            $("#player-1-box").removeClass(animationName);
             $("#player-2-box").click(function() {
                 console.log("happy current player2:", currentPlayer);
                 $("#player-2-box")
                     .addClass(animationName)
                     .on(animationEnd, function() {
                         $("#player-2-box").removeClass(animationName);
-                        // e.stopPropagation(e);
                     });
             });
         }
@@ -548,7 +550,6 @@
                 },
                 complete: function() {
                     $this.text(this.countNum);
-                    //alert('finished');
                 }
             }
         );
@@ -571,7 +572,6 @@
                 },
                 complete: function() {
                     $this.text(this.countNum);
-                    //alert('finished');
                 }
             }
         );
