@@ -24,6 +24,7 @@
 
         if ($(e.currentTarget).hasClass(currentPlayer)) {
             countSelectedMarblesForNextMove.push($(e.currentTarget));
+            console.log("happy count:", countSelectedMarblesForNextMove);
         }
 
         var checkSequence = function() {
@@ -43,6 +44,7 @@
 
                     if (pushMarblesDiagonal + 1 === moveMarblesDiagonal) {
                         marblesSequence = true;
+                        console.log("happy sequence:", marblesSequence);
                     }
                 }
             }
@@ -56,6 +58,7 @@
 
         if (countSelectedMarblesForNextMove.length > 1) {
             checkSequence();
+            console.log("happy Check:", checkSequence());
         }
 
         if (
@@ -69,6 +72,7 @@
         turnCounter++;
 
         if (turnCounter !== 2 && $(e.currentTarget).hasClass(currentPlayer)) {
+            console.log("happy turn:", turnCounter);
             return;
         } else if (
             turnCounter !== 3 &&
@@ -207,10 +211,19 @@
                 // incrementerDownLeft = rowsLogic[i].incrDownLeft;
             }
 
+            console.log("great user:", userSelection);
+            if ($("#" + (userSelection + 1)).hasClass(currentPlayer) == true) {
+                console.log("happy move left");
+                // countSelectedMarblesForNextMove[0].removeClass(currentPlayer);
+                $("#" + userSelection).addClass(currentPlayer);
+                console.log("great #:", $("#" + userSelection));
+            }
+
             function adjacentMoveCheck() {
                 if ($("#" + (userSelection - 1)).hasClass(currentPlayer)) {
                     return true;
                 }
+
                 if ($("#" + (userSelection + 1)).hasClass(currentPlayer)) {
                     return true;
                 } else {
@@ -287,7 +300,6 @@
 
             function downMoveBelowCheck() {
                 if ($("#" + (userSelection - incrementerDownRight) - 1)) {
-                    // $(e.currentTarget).addClass(currentPlayer);
                     return true;
                 } else {
                     return false;
