@@ -491,25 +491,25 @@
         var animationEnd = "animationend";
 
         if (currentPlayer === playerOne) {
-            $("#player-2-box").removeClass(animationName);
-            $("#player-1-box").click(function() {
+            // $("#player-2-box").removeClass(animationName);
+                $("#player-1-box").click(function() {
                 $("#player-1-box")
                     .addClass(animationName)
                     .on(animationEnd, function() {
                         console.log("end animation");
-                        $("#player-1-box").removeClass(animationName);
+                        $("#player-1-box").removeClass(animationName)
+                        .off('click');
                     });
             });
-        }
-
-        if (currentPlayer === playerTwo) {
+        } else if (currentPlayer === playerTwo) {
             $("#player-1-box").removeClass(animationName);
             $("#player-2-box").click(function() {
                 console.log("happy current player2:", currentPlayer);
                 $("#player-2-box")
                     .addClass(animationName)
                     .on(animationEnd, function() {
-                        $("#player-2-box").removeClass(animationName);
+                        $("#player-2-box").removeClass(animationName)
+                        .off("click");
                     });
             });
         }
